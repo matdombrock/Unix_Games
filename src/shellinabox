@@ -1,0 +1,35 @@
+# Should shellinaboxd start automatically
+SHELLINABOX_DAEMON_START=1
+
+# TCP port that shellinboxd's webserver listens on
+SHELLINABOX_PORT=4200
+
+# Parameters that are managed by the system and usually should not need
+# changing:
+# SHELLINABOX_DATADIR=/var/lib/shellinabox
+# SHELLINABOX_USER=shellinabox
+# SHELLINABOX_GROUP=shellinabox
+
+# Any optional arguments (e.g. extra service definitions).  Make sure
+# that that argument is quoted.
+#
+#   Beeps are disabled because of reports of the VLC plugin crashing
+#   Firefox on Linux/x86_64.
+SHELLINABOX_ARGS="--no-beep --disable-ssl \
+-s '/adventure/:nobody:nogroup:HOME:/usr/games/adventure' \
+-s '/battlestar/:nobody:nogroup:HOME:/usr/games/battlestar' \
+-s '/nethack/:nobody:nogroup:HOME:/usr/games/nethack' \
+-s '/crawl/:shellinaboxu:shellinaboxu:/home/shellinaboxu:/usr/games/crawl' \
+-s '/tome/:shellinaboxu:shellinaboxu:/home/shellinaboxu:/usr/games/tome-gcu' \
+-s '/cdda/:shellinaboxu:shellinaboxu:/home/shellinaboxu:/usr/games/cataclysm' \
+-s '/ch33ter/:nobody:nogroup:HOME:/usr/games/ch33ter' \
+-s '/zangband/:nobody:nogroup:HOME:/usr/games/zangband' \
+-s '/slashem/:nobody:nogroup:HOME:/usr/games/slashem' \
+# Utilities
+-s '/top/:nobody:nogroup:HOME:/usr/bin/top' \
+-s '/list/:root:root:/root:/root/ls_shellinabox.sh' \
+# Disable this next line if you want to run this publicly
+-s '/shell/:root:root:/root:bash' \
+"
+
+
