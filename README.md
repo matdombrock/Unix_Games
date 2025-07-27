@@ -22,6 +22,7 @@ Modify the file at `custom/host.txt` if you want to display something aside from
 
 ## Build the image
 ```bash
+cd unix_games
 podman build -t unix_games
 ```
 
